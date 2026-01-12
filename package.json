@@ -16,7 +16,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@unocss/reset": "^66.5.11",
+    "@unocss/reset": "^66.5.12",
     "@vueuse/core": "^14.1.0",
     "axios": "^1.13.2",
     "canvas-confetti": "^1.9.4",
@@ -26,11 +26,11 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@iconify-json/carbon": "^1.2.15",
+    "@iconify-json/carbon": "^1.2.16",
     "@tsconfig/node-lts": "^24.0.0",
     "@types/canvas-confetti": "^1.9.0",
     "@types/js-cookie": "^3.0.6",
-    "@types/node": "^24.10.4",
+    "@types/node": "^24.10.7",
     "@vitejs/plugin-vue": "^6.0.3",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
@@ -41,10 +41,10 @@
     "npm-run-all2": "^8.0.4",
     "prettier": "3.6.2",
     "typescript": "~5.9.3",
-    "unocss": "^66.5.11",
-    "unplugin-vue-router": "^0.19.1",
-    "vite": "^7.3.0",
+    "unocss": "^66.5.12",
+    "unplugin-vue-router": "^0.19.2",
+    "vite": "^7.3.1",
     "vite-plugin-vue-devtools": "^8.0.5",
-    "vue-tsc": "^3.2.1"
+    "vue-tsc": "^3.2.2"
   }
 }
