@@ -1,39 +1,28 @@
 <template>
-  <div relative w-full h-full box-border>
-    <div
-      position="absolute inset-4"
-      border="1px solid gray-400/50 rounded-2"
-      flex
-      flex-col
-    >
-      <header flex justify-between items-center p-4>{{ num }}</header>
-      <div
-        flex
-        flex-1
-        justify-center
-        items-center
-        font="size-20 bold"
-        @pointerdown="congrats"
-      >
-        Welcome !
-      </div>
-    </div>
+  <div
+    w-full
+    h-full
+    flex
+    justify-center
+    items-center
+    font="size-20 bold"
+    @pointerdown="congrats"
+  >
+    Welcome !
   </div>
 </template>
 
 <script setup lang="ts">
+import { useTitle } from '@vueuse/core'
 import confetti from 'canvas-confetti'
 import { onMounted } from 'vue'
-import { useTitle } from '@vueuse/core'
 import { useCountState } from '../stores/count'
-import { storeToRefs } from 'pinia'
 
 useTitle('首页')
 
 const countState = useCountState()
 
 const { increment } = countState
-const { num } = storeToRefs(countState)
 
 onMounted(() => {
   setTimeout(congrats, 300)
@@ -73,3 +62,8 @@ function congrats() {
   increment()
 }
 </script>
+
+<route lang="yaml">
+meta:
+  layout: default
+</route>

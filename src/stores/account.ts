@@ -23,6 +23,7 @@ export const useAccountStore = defineStore('account', () => {
 
   function needLogin() {
     isNeedLogin.value = true
+    Cookie.set('auth_status', '0')
     stopRenewal()
   }
 

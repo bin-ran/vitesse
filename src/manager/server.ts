@@ -1,5 +1,6 @@
 import axios, { type AxiosInstance, type CreateAxiosDefaults } from 'axios'
 import { useAccountStore } from '../stores/account'
+import eventEmitter from './eventEmitter'
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL
 
@@ -29,16 +30,13 @@ export function server() {
 
     server.interceptors.response.use(
       function (response) {
-        console.log(response)
-
         return response
       },
       function (error) {
         console.log(error)
 
         if (error.response.status === 401 || error.response.status === 501) {
-          useAccountStore().needLogin()
-          return
+          eventEmitter.emit('API:UN_AUTH')
         }
 
         return Promise.reject(error)
