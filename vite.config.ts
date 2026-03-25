@@ -36,6 +36,23 @@ export default defineConfig(() => {
                 name: 'pinia',
                 test: /node_modules\/pinia/,
               },
+              {
+                name: 'count',
+                test: (id) => {
+                  if (
+                    id.includes(
+                      new URL(
+                        './src/stores/count.ts',
+                        import.meta.url,
+                      ).pathname.slice(1),
+                    )
+                  ) {
+                    console.log(id)
+                    return true
+                  }
+                  return false
+                },
+              },
             ],
           },
         },
