@@ -65,5 +65,5 @@ function congrats() {
 
 <route lang="yaml">
 meta:
-  layout: default
+  layout: main
 </route>
