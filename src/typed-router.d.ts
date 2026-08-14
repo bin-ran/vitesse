@@ -14,11 +14,15 @@ import type {
   ParamValueZeroOrMore,
   ParamValueZeroOrOne,
 } from 'vue-router'
+import type {
+  _ExtractParamParserType,
+} from 'vue-router/experimental'
 
 declare module 'vue-router' {
   interface TypesConfig {
-    ParamParsers:
-      | never
+    _ParamParsers: {}
+    RouteNamedMap: import('vue-router/auto-routes').RouteNamedMap
+    _RouteFileInfoMap: import('vue-router/auto-routes')._RouteFileInfoMap
   }
 }
 
@@ -30,13 +34,6 @@ declare module 'vue-router/auto-routes' {
     '/': RouteRecordInfo<
       '/',
       '/',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '/account/login': RouteRecordInfo<
-      '/account/login',
-      '/account/login',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -59,11 +56,7 @@ declare module 'vue-router/auto-routes' {
         | '/'
       views:
         | never
-    }
-    'src/pages/account/login.vue': {
-      routes:
-        | '/account/login'
-      views:
+      pathParamNames:
         | never
     }
   }
